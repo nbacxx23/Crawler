@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="大公报,大公网,大公报网,百年,社评,海外,华人,资讯,时政,新闻,中国,国际,香港,台湾,财经,港股,体育,娱乐,时尚,汽车,数码,健康,教育,佛教,艺术,专题,艺术" />
+<meta name="description" content="大公网，百年大公报的新媒体平台。专注于时政、财经与生活资讯，提供新闻与独家评论。秉持“香港视角、中国观点、世界表达”的媒体理念，为全球华人提供媒体、公关、培训等多元媒体服务。" />
+<meta name="baidu_union_verify" content="100766ccbcd2db94cef2f0190f403d73">
+<title>大公网</title>
+<link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://m.takungpao.com"/>
+<link rel="shortcut icon" href="http://www.takungpao.com/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="http://static.takungpao.com/css/headFoot_2.0.css" />
+<link type="text/css" rel="stylesheet" href="http://static.takungpao.com/css/home_2.0.css" />
+<link type="text/css" rel="stylesheet" href="http://static.takungpao.com/js/mejs/mediaelementplayer.css"/>
+<script src="http://dup.baidustatic.com/js/ds.js"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript" src="http://static.takungpao.com/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://static.takungpao.com/ad/js/takungpao/index.js"></script>
+<script type="text/javascript" src="http://static.takungpao.com/js/mejs/mediaelement-and-player.min.js"></script>
+<style>
+/*弹出广告样式*/
+.ad_box{display:none;width:1000px;height:500px;overflow: hidden;position: absolute;top:187px;left:50%;margin-left: -500px;margin-top:0px;z-index: 9999999}
+.ad_box_con{position: relative;}
+.ad_box img{display:block;width:100%;height:100%;}
+.ad_btn_close{display: block;font:18px/36px "Arial";height:36px;width:55px;padding:0 10px;position: absolute;top:5px;right:0;z-index: 99;color:#666;}
+.ad_btn_close:hover{color:#c00;}
+.tkp_header .ad_img_pos {
+display: none;
+position: absolute;
+width: 330px;
+height: 58px;
+left: 35%;
+top: 30px;
+overflow: hidden;
+z-index: 9;
+}
+/*弹出广告样式end*/
+
+/*要闻,香港切换样式*/
+#news_hkol a.news_tle{color:#333;margin-right:10px;}
+#news_hkol a.news_tle:hover{color:#c00;}
+#news_hkol a.news_tle.on{color:#c90;}
+.news_tle_list{display:none;}
+.news_tle_list.show{display:block;}
+
+#.tkp_header{ padding:60px 0 20px 0; background:url(http://static.takungpao.com/images/special/160613/hk_417_135.gif) 615px bottom no-repeat;}
+#.tkp_header .searchBox{ display:none;}
+#.weiguanxinban{ width:420px; height:130px; position:absolute; right:0; top:0; z-index:2;}
+
+</style>
+    <!--[if lt IE 9]> 
+    <script src="http://static.takungpao.com/js/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]> 
+    <noscript>
+         <style>.html5-wrappers{display:none!important;}</style>
+         <div class="ie-noscript-warning">您的浏览器禁用了脚本，请<a href="http://static.takungpao.com/home/openJavascript.html">查看这里</a>来启用脚本!
+         </div>
+    </noscript>
+    <![endif]-->
+</head>
+<body>
+<div class="tkp_header comWidth clearfix">  
+    <div class="logoBox fl_dib">
+        <div class="logoImg fl_dib">
+            <a href="http://www.takungpao.com/"><img src="http://static.takungpao.com/images/haedFoot/logo_Gold.png" alt="大公网logo" title="大公网" /></a>
+        </div>
+        <div class="fl_dib">
+            <div id="tkp_date_weather">loading...</div>
+            <div class="linkBox appBox">
+                <a href="http://www.takungpao.com/special/app/" target="_blank" class="a_newsApp a_icon">新闻客户端</a><span>|</span>
+                <a href="http://www.takungpao.com/corp/led.html" target="_blank">LED屏</a>
+                <!--<span>|</span>
+                <a href="http://www.takungpao.com.hk/" target="_blank">微博</a>
+                <span>|</span>
+                <a href="http://www.takungpao.com.hk/" target="_blank">微信</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="searchBox fr_dib">
+        <div class="linkBox">
+                <div class="a_webLog fl_dib" id="loginfo">
+                    <a href="http://passport.takungpao.com/?link=takung" target="_self">登录</a><span>|</span><a href="http://passport.takungpao.com/tkRegister" target="_blank"> 注册</a>
+                </div>
+            <div class="setWebLange fr_dib"><a href="http://www.takungpao.com.hk/" target="_slef" class="a_setLange">繁体</a></div>
+        </div>
+        <form name="form1" action="http://search.takungpao.com/" method="get" onsubmit="per_submit();return false;" target="_blank">
+            <div class="searchCon clearfix">
+                <input type="hidden" name="typeid" value="342" id="isPic" />
+                <input type="text" class="in_txt fl_dib" id="tkp_search_txt" name="q" value="输入搜索内容" />
+                <input type="submit" id="btn" class="button fl_dib" value="搜 索" />
+            </div>
+        </form>
+    </div>
+    <!--顶部浮层广告Jone-->
+   <!--<a class="ad_img_pos" id="ad_img_pos" href="http://www.takungpao.com.hk/special/ggws/" target="_blank"><img src="http://images.takungpao.com/2016/1031/20161031041849259.jpg"/></a>-->
+   <!--顶部浮层广告Jone-->
+    <!-- 顶部图标广告Start -->
+
+
+<!-- 广告位：TKP首页图标广告（330*60） 
+<div class="ad_img_pos" id="ad_img_pos">
+<a href="" target="_blank"><img src="" /></a>
+</div>-->
+<!--<script type="text/javascript">write_ad('takungpao_index_icon_33060');</script>-->
+   <!-- 顶部图标广告END -->
+   <!--<a href="http://www.takungpao.com.hk" target="_blank" class="weiguanxinban"></a>-->
+</div>
+
+    <nav>
+  <!-- s:header_new -->
+                  <div class="tkp_nav" id="tkp_nav">
+	<div class="navList comWidth clearfix">
+		<ul>
+		   <li class="first"><a href="http://news.takungpao.com/paper/" target="_blank">大公报</a></li>
+		   <li><a href="http://news.takungpao.com/mainland/" target="_blank">中国</a></li><!--style="color: #c90;font-weight: bold;" -->
+		   <li><a href="http://news.takungpao.com/world/" target="_blank">国际</a></li>
+		   <li><a href="http://www.takungpao.com.hk/" target="_blank">香港</a></li>
+		   <li><a href="http://finance.takungpao.com/" target="_blank">财经</a></li>
+		   <li><a href="http://sports.takungpao.com/" target="_blank">体育</a></li>
+		   <li><a href="http://ent.takungpao.com/" target="_blank">娱乐</a></li>
+		   <li><a href="http://auto.takungpao.com/" target="_blank">汽车</a></li>
+		   <li><a href="http://digi.takungpao.com/" target="_blank">数码</a></li>
+		   <li><a href="http://edu.takungpao.com/" target="_blank">教育</a></li>
+		   <li><a href="http://bodhi.takungpao.com/" target="_blank">佛教</a></li>
+		   <li><a href="http://fm.takungpao.com/" target="_blank">电台</a></li>
+		   <li><a href="http://v.takungpao.com/" target="_blank">视频</a></li>
+		   <li class="last"><a href="http://news.takungpao.com/special/" target="_blank">专题</a></li>
+		   <!--<li><a href="javascript:;" class="nav_more"></a></li>-->
+		</ul>
+		<!-- 显示更多 以后导航内容多的时候用到 -->
+		<!--<dl>
+			<dd><a href="#" target="_blank">旅游</a></dd>
+			<dd><a href="#" target="_blank">探索</a></dd>
+			<dd><a href="#" target="_blank">论坛</a></dd>
+		</dl>-->
+	</div>
+</div>
+        <!-- e:header2 -->
+    </nav>
+    <!-- 内容-->
+    <section>
+    <!-- ad 1000X75-->
+    <div class="ad ad_1000_75 comWidth">
+    <!-- 广告位：TKP首页顶部通栏1000*75 -->
+    <script type="text/javascript">write_ad('takungpao_index_top_banner_100075');</script>
+  </div>
+
+<!--实时新闻-->
+<div class="container comWidth clearfix">
+    <!--焦点图-->
+    
+            <div id="block_id_81722" class="admin_block" blockid="81722"><div class="focus_photos">
+        <div class="arrow_left"></div>
+        <div class="arrow_right"></div>
+        <div class="swiper-container" id="focus_photos">
+            <div class="swiper-wrapper">			
+                <div class="swiper-slide">
+                    <a href="http://www.takungpao.com.hk/hongkong/photo/2016/1113/813.html#p=1" target="_blank">
+                        <img src="http://images.takungpao.com/2016/1113/20161113042340708.jpg" />
+                        <span class="notes">五万香港市民集会 反“港独”撑释法</span>
+                    </a>
+                </div>
+                                <div class="swiper-slide">
+                    <a href="http://news.takungpao.com/hkol/imgs/2016-11/1431792.html" target="_blank">
+                        <img src="http://images.takungpao.com/2016/1112/20161112073604153.jpg" />
+                        <span class="notes">新界各界发起汽车大游行 表达反辱华反“港独”立场</span>
+                    </a>
+                </div>
+                                <div class="swiper-slide">
+                    <a href="http://www.takungpao.com.hk/hongkong/photo/2016/1112/805.html" target="_blank">
+                        <img src="http://images.takungpao.com/2016/1112/20161112030731950.png" />
+                        <span class="notes">特区政府举行孙中山诞辰150周年纪念仪式</span>
+                    </a>
+                </div>
+                                <div class="swiper-slide">
+                    <a href="http://photo.takungpao.com/politics/2016-11/1431789.html" target="_blank">
+                        <img src="http://images.takungpao.com/2016/1111/20161111043637537.jpg" />
+                        <span class="notes">纪念孙中山先生诞辰150周年大会在北京举行</span>
+                    </a>
+                </div>
+                                <div class="swiper-slide">
+                    <a href="http://photo.takungpao.com/watch/2016-11/1431794.html" target="_blank">
+                        <img src="http://images.takungpao.com/2016/1113/20161113113323424.jpg" />
+                        <span class="notes">韩国数十万民众集会要求朴槿惠下台</span>
+                    </a>
+                </div>
+                	
+</div>
+            <ul class="page_photos" id="page_photos"></ul>
+        </div>
+    </div></div>            
+    <!--/焦点图-->
+    
+    <!--右-->
+    <div class="headline">
+                                <h3><a href="http://news.takungpao.com/hkol/headline/2016-11/3391254.html" target="_blank" title="">新西兰地震 外交部：暂无中国公民伤亡报告</a></h3>
+        <ul><a href="http://news.takungpao.com/hkol/headline/2016-11/3391254.html" target="_blank" title="">新西兰地震发生后，外交部领保中心表示，目前暂无我国公民在地震中伤亡的报告。领保中心及我国驻当地使领馆将持续关注情况。</a></ul>
+                                <h3><a href="http://news.takungpao.com/hkol/headline/2016-11/3391250.html" target="_blank" title="">新西兰发生8.0级地震 震源深度10公里</a></h3>
+        <ul><a href="http://news.takungpao.com/hkol/headline/2016-11/3391250.html" target="_blank" title="">北京时间11月13日19时2分，新西兰发生8.0级地震，震中位于南纬4...</a></ul>
+                                <h3><a href="http://news.takungpao.com/hkol/headline/2016-11/3391234.html" target="_blank" title="">韩检方：朴槿惠将以案件相关人身份接受调查</a></h3>
+        <ul><a href="http://news.takungpao.com/hkol/headline/2016-11/3391234.html" target="_blank" title="">负责调查&ldquo;亲信门&rdquo;案的有关人士13日透露，检方认为最迟应在15...</a></ul>
+                                <h3><a href="http://news.takungpao.com/mainland/focus/2016-11/3391212.html" target="_blank" title="">“中国伟哥之父”闫永明自首 20出头身家过亿</a></h3>
+        <ul><a href="http://news.takungpao.com/mainland/focus/2016-11/3391212.html" target="_blank" title="">潜逃海外15年之久的&ldquo;百名红通&rdquo;人员第5号嫌犯闫永明回国投案自...</a></ul>
+                                <h3><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391196.html" target="_blank" title="">林郑：依法处理宣誓风波 批部分议员罔顾庄严</a></h3>
+        <ul class="last"><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391196.html" target="_blank" title="">林郑月娥重申，立法会内有议员罔顾庄严宣誓，行为令市民痛心、...</a></ul>
+                            </div>
+    <!--/右-->
+</div>
+<!--/实时新闻-->
+
+
+    <div class="container comWidth clearfix pt0">
+		<div class="ads-wrapper clearfix">
+			<div class="ads-400 fl_dib"><a href="http://news.takungpao.com/special/cp5016/" target="_blank"><img src="http://images.takungpao.com/2016/1110/20161110023929571.jpg" alt="纪念孙中山诞辰150周年"/></a></div>
+			<div class="ads-240 fl_dib"><a href="http://news.takungpao.com/special/cp5008/" target="_blank"><img src="http://images.takungpao.com/2016/1109/20161109032448520.jpg" alt="珠海航展"/></a></div>
+			<div class="ads-270 fr_dib"><a href="http://news.takungpao.com/special/tkpcz/" target="_blank"><img src="http://images.takungpao.com/2016/1109/20161109032448879.jpg" alt="一份报纸上的长征"/></a></div>
+		</div>
+        <!--左 -->
+        <div class="con_l fl_dib">
+      
+      <!-- 亚运会板块-->
+         <!--   <div class="con_t">-->
+                <!-- 左-->
+           <!--     <div class="con_t_l">
+	<a href="http://sports.takungpao.com/special/cp3466/" target="_blank"><img src="http://images.takungpao.com/2014/1004/20141004113609548.jpg"></a>
+	<p><a href="http://sports.takungpao.com/special/cp3466/" target="_blank">蒙古-改变人类史</a></p>
+</div>
+<div class="con_t_c">
+	<div class="con_t_c_t">
+        <a class="con_t_c_t_a" href="http://sports.takungpao.com/special/yayun/" target="_blank"></a> 
+        <a class="con_t_c_t_a2" href="http://www.bosma.com.cn/" target="_blank"></a></div>
+	<p><a href="http://sports.takungpao.com/yayun/yysy/czu/2014-10/2766108.html" target="_blank">[前方]福原爱将铜牌借给香港队员：随便咬</a></p>
+	<p><a href="http://sports.takungpao.com/yayun/yysy/yw/2014-10/2766095.html" target="_blank">[特稿]美丽韩剧的残酷现实：八万八千美元削颧骨 </a></p>
+	<p><a href="http://sports.takungpao.com/topic/byd/2014-10/1402658.html" target="_blank">独家评论:一碗牛肉面毁了亚运冠军？于国于民都是耻辱</a></p>
+</div>-->
+                <!-- 右-->
+         <!--       <div class="con_t_r">
+	<div class="con_t_r_t"><a href="http://sports.takungpao.com/special/jiangpai/" target="_blank" style=" height:24px;width:110px; display:block"></a><a class="new_meng" href="http://www.mengniu.com.cn/" target="_blank"></a></div>
+	<ul>
+                    	<li class="con_t_r_t_li ">中国</li>
+                        <li>151</li>
+                    </ul>
+                    <ul>
+                    	<li class="con_t_r_t_li con_t_r_t_lia">韩国</li>
+                        <li>79</li>
+                    </ul>
+                    <ul>
+                    	<li class="con_t_r_t_li con_t_r_t_lib">日本</li>
+                        <li>47</li>
+                    </ul>
+</div>
+<div class="clear_m"></div>-->
+         <!--   </div>-->
+            <!-- 亚运会板块end-->
+
+        
+            <!--要闻 -->
+            <div class="newsBox">
+        <!-- 列表-->
+        <div class="news_l fl_dib">
+          <!--头条-->
+          <div id="block_id_52816" class="admin_block" blockid="52816"><h1><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391173.html" target="_blank" textvalue="张晓明：释法是唯一适当选择">张晓明：释法是唯一适当选择</a> <a textvalue="讲话全文" target="_blank" href="http://news.takungpao.com/hkol/topnews/2016-11/3391175.html">讲话全文</a> </h1><h3><a textvalue="张晓明出席培侨70周年校庆：爱国教育至关重要" target="_blank" href="http://news.takungpao.com/hkol/topnews/2016-11/3391174.html">张晓明出席培侨70周年校庆：爱国教育至关重要</a> </h3><h3><a textvalue="学者：立会闹剧或另有主谋 须强化依法治港理念" target="_blank" href="http://news.takungpao.com/hkol/topnews/2016-11/3391207.html">学者：立会闹剧或另有主谋 须强化依法治港理念</a></h3></div>          <div class="h_15"></div>
+          <!--要闻-->
+          <h2 id="news_hkol"><a href="http://news.takungpao.com/" target="_blank" class="news_tle on" style=" padding-right: 10px; float: left; height: 14px;*height:20px; line-height: 14px;*line-height:20px; margin: 8px 10px 0px 0px;*margin:6px 10px 0 0;">要闻 </a><!--<a href="http://news.takungpao.com/hkol/" target="_blank" class="news_tle">今日香港</a>--></h2>
+            <div class="news_tle_list show">
+            <div id="block_id_52817" class="admin_block" blockid="52817"><ul>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391188.html" target="_blank">特首出席孙中山诞辰纪念 勉港青学习爱国情操</a></h3>  
+		<div class="info"><p>梁振英冀香港市民秉承中山先生遗志，用好“一国两制”的双重优势。</p></div>
+	</li>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391230.html" target="_blank">五万香港市民举行大规模集会 反&quot;港独&quot;撑释法</a></h3>  
+		<div class="info"><p>“反港独撑释法”大联盟提出，要求拒绝效忠基本法的议员自行辞职。</p></div>
+	</li>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/mainland/focus/2016-11/3391192.html" target="_blank">首位歼10女飞行员余旭殉职 疑在跳伞过程中受撞击</a></h3>  
+		<div class="info"><p>人称“金孔雀”的她是中国仅有的4位三代歼击机女飞行员之一。</p></div>
+	</li>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/taiwan/liangan/2016-11/3391189.html" target="_blank">两岸各界齐声反“台独” 积极支持“九二共识”</a></h3>  
+		<div class="info"><p>座谈会由中国工业合作协会发起，洪秀柱发来贺信并派代表出席。</p></div>
+	</li>
+	<li class="newsImgLi clearfix">
+		<div class="newsImg_l lid_img fl_dib">
+			<a href="http://news.takungpao.com/world/exclusive/2016-11/3391184.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1113/20161113044835323.jpg" src="http://images.takungpao.com/2016/1113/20161113044835323.jpg" alt="特朗普子女参与筹组新班底 女婿或任白宫幕僚长" /></a>
+		</div>
+		<div class="newsImg_r fr_dib">
+	<h4><a href="http://news.takungpao.com/world/exclusive/2016-11/3391184.html" target="_blank">特朗普子女参与筹组新班底 女婿或任白宫幕僚长</a></h4>
+	<div class="txt"><p>特朗普的三名子女也将加入政权交接团队，有媒体调侃，特朗普当选总统像是一场“家族盛事”。</p></div>
+</div>
+</li>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/world/exclusive/2016-11/3391182.html" target="_blank">奥巴马弃推TPP 秘鲁总统：中国可主导亚太协议</a></h3>  
+		<div class="info"><p>库琴斯基称，俄罗斯也应当是敲定任何有关新的关税削减协定的一部分。<br /></p></div>
+	</li>
+	<li class="clearfix">
+		<h3><a href="http://news.takungpao.com/world/exclusive/2016-11/3391185.html" target="_blank">首尔30年来最大集会 韩百万人示威促朴槿惠下台</a></h3>  
+		<div class="info"><p>今次集会将成为目前局面的重要分水岭，影响力可能会决定事态发展。</p></div>
+	</li>
+	<li class="newsImgLi clearfix">
+		<div class="newsImg_l lid_img fl_dib">
+			<a href="http://news.takungpao.com/hkol/topnews/2016-11/3391195.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1113/20161113055617655.jpg" src="http://images.takungpao.com/2016/1113/20161113055617655.jpg" alt="不放弃上天赐的礼物 好爸妈笑对“凡间天使”" /></a>
+		</div>
+		<div class="newsImg_r fr_dib">
+	<h4><a href="http://news.takungpao.com/hkol/topnews/2016-11/3391195.html" target="_blank">不放弃上天赐的礼物 好爸妈笑对“凡间天使”</a></h4>
+	<div class="txt"><p>“天使综合症”、前称“快乐木偶症”。本港每年约有三至五宗新症，确诊年龄通常为二至五岁。<br /></p></div>
+</div>
+</li>
+</ul>
+<!-- <a href="http://news.takungpao.com/" target="_blank" class="news_more">更多要闻&gt;&gt;</a>	--></div>            </div>
+            <div class="news_tle_list">
+            
+            </div>
+        </div>
+        <!-- 独家-->
+        <div class="news_r fr_dib">
+          <div id="block_id_52818" class="admin_block" blockid="52818"><!--<h2><a href="http://news.takungpao.com/special/column/" target="_blank" class="news_tle">观点</a></h2>-->
+<ul>
+<li>
+	<div class="sole_l lid_img fl_dib">
+		<a href="http://news.takungpao.com/special/shp/" target="_blank"><img src="http://images.takungpao.com/2016/0725/20160725051449113.jpg" alt="[大公社评]" /></a>
+	</div>
+	<div class="sole_r fr_dib">
+		<h5><a href="http://news.takungpao.com/special/shp/" target="_blank">[大公社评]</a></h5>
+		<h5><p><a class="txt" href="http://news.takungpao.com/hkol/politics/2016-11/3390927.html" target="_blank" textvalue="长远利港发展 有百利无一害">长远利港发展&nbsp;有百利无一害</a></p></h5>
+	</div>
+</li>
+<li>
+	<div class="sole_l lid_img fl_dib">
+		<a href="http://news.takungpao.com/special/jshj/" target="_blank"><img src="http://images.takungpao.com/2016/1104/20161104073509715.jpg" alt="[井水集]" /></a>
+	</div>
+	<div class="sole_r fr_dib">
+		<h5><a href="http://news.takungpao.com/special/jshj/" target="_blank">[井水集]</a></h5>
+		<h5><p><a class="txt" href="http://news.takungpao.com/hkol/politics/2016-11/3390928.html" target="_blank" textvalue="李柱铭反释法“连斩五刀”">李柱铭反释法“连斩五刀”</a></p></h5>
+	</div>
+</li>
+<li>
+	<div class="sole_l lid_img fl_dib">
+		<a href="http://news.takungpao.com/special/zhdxj/" target="_blank"><img src="http://images.takungpao.com/2016/1101/20161101052449733.jpg" alt="[指点香江]" /></a>
+	</div>
+	<div class="sole_r fr_dib">
+		<h5><a href="http://news.takungpao.com/special/zhdxj/" target="_blank">[指点香江]</a></h5>
+		<h5><p><a class="txt" href="http://news.takungpao.com/hkol/politics/2016-11/3390938.html" target="_blank" textvalue="反对派对抗释法的实质就是袒护“港独”">反对派对抗释法的实质就是袒护“港独”</a></p></h5>
+	</div>
+</li>
+<li>
+	<div class="sole_l lid_img fl_dib">
+		<a href="http://news.takungpao.com/mainland/focus/2016-11/3390954.html" target="_blank"><img src="http://images.takungpao.com/2016/1110/20161110021221446.png" alt="[两岸互动]" /></a>
+	</div>
+	<div class="sole_r fr_dib">
+		<h5><a href="http://news.takungpao.com/mainland/focus/2016-11/3390954.html" target="_blank">[两岸互动]</a></h5>
+		<h5><p><a class="txt" href="http://news.takungpao.com/mainland/focus/2016-11/3390954.html" target="_blank" textvalue="实现统一是民族根本利益">实现统一是民族根本利益</a></p></h5>
+	</div>
+</li>
+</ul></div>          <!-- ad 240X130-->
+                  <div class="ad ad_240_130">
+          <!-- 广告位：TKP首页按钮一240*130 -->
+          <script type="text/javascript">write_ad('takungpao_index_rectangle1_240130');</script>
+          </div>
+                  <!-- ad 240X260-->
+                  <div class="ad ad_240_260">
+          <!-- 广告位：TKP首页按钮二240*260 -->
+          <script type="text/javascript">write_ad('takungpao_index_rectangle2_240260');</script>
+          </div>
+        </div>
+      </div>
+            <!-- ad 680X75-->
+            <div class="ad ad_680_75">
+        <!-- 广告位：TKP首页半通栏一 680*75 -->
+        <script type="text/javascript">write_ad('takungpao_index_half_banner1_68075');</script>
+      </div>
+            <!--财经 -->
+        <div id="block_id_52831" class="admin_block" blockid="52831"><h2><a href="http://finance.takungpao.com/" target="_blank" class="news_tle">财经</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390578.html" target="_blank">阿里&quot;双11&quot;战报:天猫淘宝6分58秒成交量破100亿</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390581.html" target="_blank">前10月中国汽车产销双双突破2200万辆&nbsp;同比增长近两成</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390580.html" target="_blank">中旅集团产业基金方案上报国务院&nbsp;预期规模300至500亿</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390576.html" target="_blank">中银国际叶丙南：特朗普超预期胜选&nbsp;全球化进程遇挑战</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://finance.takungpao.com/dujia/2016-11/3390579.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1111/20161111081533896.jpg" src="http://images.takungpao.com/2016/1111/20161111081533896.jpg" alt="绿地拟51亿入股协信远创" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://finance.takungpao.com/dujia/2016-11/3390579.html" target="_blank">绿地拟51亿入股协信远创</a></div>
+	</div>
+		</div></div>            <!--金融 -->
+        <div id="block_id_52832" class="admin_block" blockid="52832"><h2><a href="http://finance.takungpao.com/hkstock/" target="_blank" class="news_tle">金融</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390573.html" target="_blank">梁振英：深港通将为两地股市互联互通增添新管道</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390574.html" target="_blank">传特朗普无意要求美联储主席耶伦辞职&nbsp;暗示不支持连任</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390575.html" target="_blank">市场思量特朗普新政会如何影响经济成长&nbsp;金价大跌逾1%</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://finance.takungpao.com/dujia/2016-11/3390572.html" target="_blank">特朗普竞选承诺惹市场憧憬&nbsp;欧亚股市转暖港股反弹423点</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://finance.takungpao.com/dujia/2016-11/3390577.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1111/20161111081730790.jpg" src="http://images.takungpao.com/2016/1111/20161111081730790.jpg" alt="亚视或明年初完成债务重组" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://finance.takungpao.com/dujia/2016-11/3390577.html" target="_blank">亚视或明年初完成债务重组</a></div>
+	</div>
+		</div></div>            <!--体育 -->
+        <div id="block_id_52833" class="admin_block" blockid="52833"><h2><a href="http://sports.takungpao.com/" target="_blank" class="news_tle">体育</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://sports.takungpao.com/q/2016/1111/3390585.html" target="_blank" textvalue="刘国梁入围乒联最佳教练提名 将与希拉库克争殊荣">刘国梁入围乒联最佳教练提名 将与希拉库克争殊荣</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://sports.takungpao.com/q/2016/1110/3390183.html" target="_blank" textvalue="港足4:2击败中华台北 末段失球未超朝鲜登东锦赛榜首">港足4:2击败中华台北 末段失球未超朝鲜登东锦赛榜首</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://sports.takungpao.com/q/2016/1110/3390185.html" target="_blank" textvalue="两直播平台违规直播国足昆明教学赛 足协：强烈谴责">两直播平台违规直播国足昆明教学赛 足协：强烈谴责</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://sports.takungpao.com/q/2016/1110/3390186.html" target="_blank" textvalue="续约谈判失败 上海申花宣布与主帅曼萨诺解约">续约谈判失败 上海申花宣布与主帅曼萨诺解约</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://photo.takungpao.com/watch/2016-11/1431790.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1111/20161111033319977.jpg" src="http://images.takungpao.com/2016/1111/20161111033319977.jpg" alt="奥巴马接见NBA冠军球队 获赠16号球衣" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://photo.takungpao.com/watch/2016-11/1431790.html" target="_blank">奥巴马接见NBA冠军球队 获赠16号球衣</a></div>
+	</div>
+		</div></div>            <!--娱乐 -->
+        <div id="block_id_53218" class="admin_block" blockid="53218"><h2><a href="http://ent.takungpao.com/" target="_blank" class="news_tle">娱乐</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://ent.takungpao.com/q/2016/1026/3384428.html" target="_blank">林心如谈婚姻：棋逢对手</a>&nbsp;&nbsp;<a href="http://ent.takungpao.com/q/2016/1026/3384426.html" target="_blank">霍建华预习当奶爸</a>&nbsp;</p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://ent.takungpao.com/q/2016/1026/3384431.html" target="_blank">范冰冰回应被劝离：有些事情不必分对错&nbsp;立场不同</a>&nbsp;</p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://ent.takungpao.com/q/2016/1026/3384432.html" target="_blank">奥兰多·布鲁姆晒与周杰伦夫妇合照&nbsp;网友：活久见</a>&nbsp;</p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://ent.takungpao.com/q/2016/1026/3384433.html" target="_blank" textvalue="女神朱茵庆45岁生日 黄贯中紧搂妻子喊宝贝">女神朱茵庆45岁生日&nbsp;黄贯中紧搂妻子喊宝贝</a>&nbsp;</p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://ent.takungpao.com/q/2016/1112/3391000.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1112/20161112062531726.jpg" src="http://images.takungpao.com/2016/1112/20161112062531726.jpg" alt="冯小刚新作《我不是潘金莲》济南开启全国路演" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://ent.takungpao.com/q/2016/1112/3391000.html" target="_blank">冯小刚新作《我不是潘金莲》济南开启全国路演</a></div>
+	</div>
+		</div></div>            <!-- ad 680X75-->
+            <div class="ad ad_680_75">
+        <!-- 广告位：TKP首页半通栏二 680*75 -->
+        <script type="text/javascript">write_ad('takungpao_index_half_banner2_68075');</script>
+      </div>
+            <!--时尚 -->
+        <!--<div id="block_id_52834" class="admin_block" blockid="52834"><h2><a href="http://fashion.takungpao.com/" target="_blank" class="news_tle">时尚</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://fashion.takungpao.com/q/2016/0824/3360849.html" target="_blank" textvalue="陈愉为中国女性出书：30岁前别结婚">陈愉为中国女性出书：30岁前别结婚</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://fashion.takungpao.com/q/2016/0824/3360843.html" target="_blank" textvalue="双肩包还是买杨子姗这一款 背起来超减龄">双肩包还是买杨子姗这一款&nbsp;背起来超减龄</a>&nbsp;</p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://fashion.takungpao.com/mrmt/q/2016/0824/3360847.html" target="_blank">护肤品不吸收&nbsp;定期去角质让皮肤“深呼吸”</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://fashion.takungpao.com/q/2016/0824/3360853.html" target="_blank">王思聪穿T恤变7/3分&nbsp;玩时尚还得向李易峰吴亦凡取经</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://fashion.takungpao.com/spin/q/2016/0824/3360855.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/0824/20160824105954187.jpg" src="http://images.takungpao.com/2016/0824/20160824105954187.jpg" alt="今年该戴哪种颜色的珠宝 珠宝与流行色之间的小秘密" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://fashion.takungpao.com/spin/q/2016/0824/3360855.html" target="_blank">今年该戴哪种颜色的珠宝 珠宝与流行色之间的小秘密</a></div>
+	</div>
+		</div></div>-->
+            <!--汽车 -->
+        <div id="block_id_52835" class="admin_block" blockid="52835"><h2><a href="http://auto.takungpao.com/" target="_blank" class="news_tle">汽车</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a textvalue="全新保时捷Panamera不谈配置 只谈性能！" target="_blank" href="http://auto.takungpao.com/q/2016/1109/3389758.html">全新保时捷Panamera不谈配置 只谈性能！</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a textvalue="2018款奔驰S级最新谍照 外观有变化" target="_blank" href="http://auto.takungpao.com/q/2016/1109/3389756.html">2018款奔驰S级最新谍照 外观有变化</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a textvalue="雷克萨斯UX概念车将于2016广州车展首发" target="_blank" href="http://auto.takungpao.com/q/2016/1109/3389759.html">雷克萨斯UX概念车将于2016广州车展首发</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a textvalue="总有人说日本车高速发飘这到底是为什么" target="_blank" href="http://auto.takungpao.com/q/2016/1109/3389757.html">总有人说日本车高速发飘这到底是为什么</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://auto.takungpao.com/q/2016/1109/3389760.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1109/20161109112246708.jpg" src="http://images.takungpao.com/2016/1109/20161109112246708.jpg" alt="新车图解：雪佛兰全新科迈罗 依旧强壮" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://auto.takungpao.com/q/2016/1109/3389760.html" target="_blank">新车图解：雪佛兰全新科迈罗 依旧强壮</a></div>
+	</div>
+		</div></div>            <!--数码 -->
+        <div id="block_id_52836" class="admin_block" blockid="52836"><h2><a href="http://digi.takungpao.com/" target="_blank" class="news_tle">数码</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a textvalue="大量修复Bug！Win10 PC周年更新推送" target="_self" href="http://digi.takungpao.com/other/news/2016-11/3389766.html">大量修复Bug！Win10 PC周年更新推送</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a textvalue="新人之擎 罗技Prodigy键鼠耳麦三件套评测" target="_self" href="http://digi.takungpao.com/other/news/2016-11/3389765.html">新人之擎 罗技Prodigy键鼠耳麦三件套评测</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a textvalue="iPhone 7卖的不错 供应商营收创新高" target="_self" href="http://digi.takungpao.com/other/news/2016-11/3389767.html">iPhone 7卖的不错 供应商营收创新高</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a textvalue="啼笑皆非！偷三星Note 7还未销赃竟自燃" target="_self" href="http://digi.takungpao.com/other/news/2016-11/3389768.html">啼笑皆非！偷三星Note 7还未销赃竟自燃</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://digi.takungpao.com/other/news/2016-11/3389764.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1109/20161109113845995.jpg" src="http://images.takungpao.com/2016/1109/20161109113845995.jpg" alt="王者对决 佳能5D4与索尼A7R2画质对比" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://digi.takungpao.com/other/news/2016-11/3389764.html" target="_blank">王者对决 佳能5D4与索尼A7R2画质对比</a></div>
+	</div>
+		</div></div>            <!-- ad 680X75-->
+            <div class="ad ad_680_75">
+        <!-- 广告位：TKP首页半通栏三 680*75 -->
+        <script type="text/javascript">write_ad('takungpao_index_half_banner3_68075');</script>
+      </div>
+            <!--健康 -->
+        <!--<div id="block_id_52837" class="admin_block" blockid="52837"><h2><a href="http://health.takungpao.com/" target="_blank" class="news_tle">健康</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://health.takungpao.com/q/2016/0824/3360863.html" target="_blank" textvalue="又爱又恨高跟鞋 是戒是穿看这里就明白了！">又爱又恨高跟鞋&nbsp;是戒是穿看这里就明白了！</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://health.takungpao.com/illness/q/2016/0824/3360865.html" target="_blank">千万别乱摸“脸痣”&nbsp;三种方法助你除痣</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://health.takungpao.com/q/2016/0824/3360864.html" target="_blank">宝宝增高有6个认识误区&nbsp;增高有什么小秘诀</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://health.takungpao.com/q/2016/0824/3360866.html" target="_blank">中药茶可以养生？5种中药茶老年人不宜多喝</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://health.takungpao.com/q/2016/0824/1431051.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/0824/20160824112635833.jpg" src="http://images.takungpao.com/2016/0824/20160824112635833.jpg" alt="盘点里约奥运会上的多胞胎们" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://health.takungpao.com/q/2016/0824/1431051.html" target="_blank">盘点里约奥运会上的多胞胎们</a></div>
+	</div>
+		</div></div>-->
+            <!--教育 -->
+        <div id="block_id_52838" class="admin_block" blockid="52838"><h2><a href="http://edu.takungpao.com/" target="_blank" class="news_tle">教育</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="#" target="_blank"><p><a href="http://edu.takungpao.com/special/cp5025/" target="_blank" textvalue="【独家】还原真实的香港和香港人，内地也有责任">【独家】还原真实的香港和香港人，内地也有责任</a></p></a></dd>
+																		<dd><a href="#" target="_blank"><p><a href="http://edu.takungpao.com/360/q/2016/1110/3390189.html" target="_blank" textvalue="中一生作文斥梁游儿戏无知 剪报功课道心声">中一生作文斥梁游儿戏无知 剪报功课道心声</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://edu.takungpao.com/360/q/2016/1110/3390187.html" target="_blank" textvalue="中英数成绩平稳 TSA“修订版”达标逾八成">中英数成绩平稳 TSA“修订版”达标逾八成</a></p></a></dd>
+															<dd><a href="#" target="_blank"><p><a href="http://edu.takungpao.com/360/q/2016/1110/3390191.html" target="_blank" textvalue="减负是探索如何教得有趣学得有效 学习从来都有压力">减负是探索如何教得有趣学得有效 学习从来都有压力</a></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://edu.takungpao.com/360/q/2016/1110/3390194.html" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1110/20161110102054775.jpg" src="http://images.takungpao.com/2016/1110/20161110102054775.jpg" alt="南京邮电大学传承长征精神“革命歌曲大家唱”" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://edu.takungpao.com/360/q/2016/1110/3390194.html" target="_blank">南京邮电大学传承长征精神“革命歌曲大家唱”</a></div>
+	</div>
+		</div></div>            <!--佛教 -->
+        <div id="block_id_52839" class="admin_block" blockid="52839"><h2><a href="http://bodhi.takungpao.com/" target="_blank" class="news_tle">佛教</a></h2>
+<div class="newsList">
+	<div class="news_l fl_dib">
+		<dl>
+									<dd class="first"><a href="http://bodhi.takungpao.com/topnews/2016-11/3389732.html" target="_blank"><p><a title="灵山梵宫大火已扑灭 无人员伤亡" href="http://bodhi.takungpao.com/topnews/2016-11/3389732.html" target="_blank" textvalue="灵山梵宫大火已扑灭 无人员伤亡">灵山梵宫大火已扑灭&nbsp;无人员伤亡</a></p></a></dd>
+																		<dd><a href="http://bodhi.takungpao.com/sspt/zhiyanzhiyu/2016-11/3388878.html" target="_blank"><p><a href="http://bodhi.takungpao.com/sspt/zhiyanzhiyu/2016-11/3388878.html" target="_blank" textvalue="学诚法师：好好说话，就是一种修行">学诚法师：好好说话，就是一种修行</a></p></a></dd>
+															<dd><a href="http://bodhi.takungpao.com/sspt/zhiyanzhiyu/2016-11/3388867.html" target="_blank"><p><a href="http://bodhi.takungpao.com/sspt/zhiyanzhiyu/2016-11/3388867.html" target="_blank" textvalue="星云大师：千万不可忽视“熏习”的力量">星云大师：千万不可忽视“熏习”的力量</a></p></a></dd>
+															<dd><a href="http://bodhi.takungpao.com/sspt/sraddha/2016-11/3389325.html" target="_blank"><p><a href="http://bodhi.takungpao.com/sspt/sraddha/2016-11/3389325.html" target="_blank" textvalue="林清玄：一本佛经，改变了我的整个想法">林清玄：一本佛经，改变了我的整个想法</a><br /></p></a></dd>
+															</dl>
+	</div>
+											<div class="news_r fr_dib">
+		<div class="list_img_s lid_img fl_dib">
+			<a href="http://news.takungpao.com/special/pts/" target="_blank"><img class="lazy" data-original="http://images.takungpao.com/2016/1107/20161107093005720.png" src="http://images.takungpao.com/2016/1107/20161107093005720.png" alt="三百戒子的求戒之路:珠海普陀寺传授三坛大戒" /></a>
+		</div>
+		<div class="list_txt_s fr_dib"><a href="http://news.takungpao.com/special/pts/" target="_blank">三百戒子的求戒之路:珠海普陀寺传授三坛大戒</a></div>
+	</div>
+		</div></div>            <!-- ad 680X75-->
+            <div class="ad ad_680_75">
+        <!-- 广告位：TKP首页半通栏四 680*75 -->
+        <script type="text/javascript">write_ad('takungpao_index_half_banner4_68075');</script>
+      </div>
+        </div>
+        <!--右 -->
+        <div class="con_r fr_dib">
+            <div id="block_id_84428" class="admin_block" blockid="84428"><div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4979/" target="_blank">[北京观察]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4979/" target="_blank" title="省级党委换届进入密集期 蒋超良出任湖北书记">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1104/20161104081629625.jpg" src="http://images.takungpao.com/2016/1104/20161104081629625.jpg" alt="省级党委换届进入密集期 蒋超良出任湖北书记" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3387597.html" target="_blank" textvalue="六中全会宣讲团三大看点 首次纳入军方人士">六中全会宣讲团三大看点&nbsp;首次纳入军方人士</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-10/3385808.html" target="_blank" textvalue="省级党委换届进入密集期"><em>▪</em>省级党委换届进入密集期</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-10/3385294.html" target="_blank" textvalue="独家观察：六中全会的四个细节"><em>▪</em>独家观察：六中全会的四个细节</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-10/3385211.html" target="_blank" textvalue="承前启后从严治党 以上率下强化监督"><em>▪</em>承前启后从严治党&nbsp;以上率下强化监督</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4989/" target="_blank">[军事瞭望]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4989/" target="_blank" title="中乌228亿渝设厂 世界最大运输机“心脏”将国产">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1113/20161113042414167.jpg" src="http://images.takungpao.com/2016/1113/20161113042414167.jpg" alt="中乌228亿渝设厂 世界最大运输机“心脏”将国产" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3391187.html" target="_blank" textvalue="中乌228亿渝设厂 世界最大运输机“心脏”将国产">中乌228亿渝设厂&nbsp;世界最大运输机“心脏”将国产</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3388846.html" target="_blank" textvalue="海军近区防御新系统卫岛礁"><em>▪</em>海军近区防御新系统卫岛礁</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/topnews/2016-11/3386754.html" target="_blank" textvalue="武警部队参谋长秦天中将：父亲的长征路"><em>▪</em>武警部队参谋长秦天中将：父亲的长征路</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-10/3385831.html" target="_blank" textvalue="中国50亿购224台俄战机引擎"><em>▪</em>中国50亿购224台俄战机引擎</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://finance.takungpao.com/special/2015beajl/" target="_blank">[大美吉林]</a></h3>
+	<ul class="pic">
+		<a href="http://finance.takungpao.com/special/2015beajl/" target="_blank" title="大美吉林·建设绿色宜居长春 ">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/0829/20160829034431284.jpg" src="http://images.takungpao.com/2016/0829/20160829034431284.jpg" alt="大美吉林·建设绿色宜居长春 " />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://finance.takungpao.com/special/2015beajl/" target="_blank">大美吉林·建设绿色宜居长春</a></p></li><li class="blue"><p><a title="大公网" href="http://zt3.cz001.com.cn/node_21554.htm" target="_blank" textvalue="2016中国常州科技经贸洽谈会"><em>▪</em>2016中国常州科技经贸洽谈会</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4981/" target="_blank">[严肃点儿]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4981/" target="_blank" title="D.T. in the House">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1110/20161110101655470.jpg" src="http://images.takungpao.com/2016/1110/20161110101655470.jpg" alt="D.T. in the House" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/mainland/topnews/2016-11/3390193.html" target="_blank" textvalue="D.T. in the House">D.T.&nbsp;in&nbsp;the&nbsp;House</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/society/topnews/2016-11/3387187.html" target="_blank" textvalue="大热！韩剧《青瓦台老板家的闺蜜》"><em>▪</em>大热！韩剧《青瓦台老板家的闺蜜》</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/society/topnews/2016-10/3384518.html" target="_blank" textvalue="这位局座开微博，3小时涨了60万粉丝"><em>▪</em>这位局座开微博，3小时涨了60万粉丝</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/society/topnews/2016-10/3382729.html" target="_blank" textvalue="1分钟看美国大选辩论收官战！"><em>▪</em>1分钟看美国大选辩论收官战！</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4991/" target="_blank">[大公访谈]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4991/" target="_blank" title="张述洲：日百年名校重人格培养">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1108/20161108021714457.jpg" src="http://images.takungpao.com/2016/1108/20161108021714457.jpg" alt="张述洲：日百年名校重人格培养" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3389360.html" target="_blank" textvalue="张述洲：日百年名校重人格培养">张述洲：日百年名校重人格培养</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3388868.html" target="_blank" textvalue="金灿荣：南海对抗持续 白宫新主施压势增"><em>▪</em>金灿荣：南海对抗持续&nbsp;白宫新主施压势增</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/world/exclusive/2016-11/3387169.html" target="_blank"><em>▪</em>墨涵：美国声誉“命悬大选”</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/taiwan/liangan/2016-10/3386098.html" target="_blank"><em>▪</em>朱卫东：蔡执政前景暗&nbsp;归正途方破局</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4990/" target="_blank">[有料历史]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4990/" target="_blank" title="迎难而上：辛亥革命期间的孙中山">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1113/20161113053242362.jpg" src="http://images.takungpao.com/2016/1113/20161113053242362.jpg" alt="迎难而上：辛亥革命期间的孙中山" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/mainland/focus/2016-11/3391193.html" target="_blank" textvalue="迎难而上：辛亥革命期间的孙中山">迎难而上：辛亥革命期间的孙中山</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/special/cp4990/2016-11/54439.html" target="_blank" textvalue="▪从点茶到抹茶 一片碧云凝白花">▪从点茶到抹茶&nbsp;一片碧云凝白花</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1102/3386938.html" target="_blank" textvalue="▪﻿颐和园藏慈禧太后汽车">▪﻿颐和园藏慈禧太后汽车</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1031/3385966.html" target="_blank" textvalue="﻿▪《百年斯文》：文化豪门的自白">﻿▪《百年斯文》：文化豪门的自白</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4978/" target="_blank">[经济观察家]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4978/" target="_blank" title="美选举短期冲击大 A股回调恰是良机">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1112/20161112062120953.jpg" src="http://images.takungpao.com/2016/1112/20161112062120953.jpg" alt="美选举短期冲击大 A股回调恰是良机" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1112/3390814.html" target="_blank" textvalue="美选举短期冲击大 A股回调恰是良机">美选举短期冲击大&nbsp;A股回调恰是良机</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1112/3390815.html" target="_blank" textvalue="﻿﻿﻿﻿▪特朗普当选 避险资产势受捧">﻿﻿﻿﻿▪特朗普当选&nbsp;避险资产势受捧</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1112/3390816.html" target="_blank" textvalue="﻿﻿﻿▪新辣招冲击 商家变招吸客">﻿﻿﻿▪新辣招冲击&nbsp;商家变招吸客</a></p><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1112/3390816.html" target="_blank" textvalue="﻿▪﻿﻿﻿新辣招冲击 商家变招吸客"></a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://news.takungpao.com/special/cp4986/" target="_blank">[大公园]</a></h3>
+	<ul class="pic">
+		<a href="http://news.takungpao.com/special/cp4986/" target="_blank" title="走访孙中山香港足迹有感/张茅">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/1113/20161113074858817.jpg" src="http://images.takungpao.com/2016/1113/20161113074858817.jpg" alt="走访孙中山香港足迹有感/张茅" />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1113/3391078.html" target="_blank" textvalue="走访孙中山香港足迹有感/张茅">走访孙中山香港足迹有感/张茅</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1113/3391079.html" target="_blank" textvalue="最标准的普通话/遐迩"><em>▪</em>最标准的普通话/遐迩</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1113/3391080.html" target="_blank" textvalue="秋阳晒菜最天然/霍无非"><em>▪</em>秋阳晒菜最天然/霍无非</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1113/3391081.html" target="_blank" textvalue="金秋桂花香/易湘壬"><em>▪</em>金秋桂花香/易湘壬</a></p></li><li class="blue"><p><a title="大公网" href="http://news.takungpao.com/paper/q/2016/1113/3391082.html" target="_blank" textvalue="读书的格局/游宇明"><em>▪</em>读书的格局/游宇明</a></p></li></ul></div>
+<div class="con_tuijian">
+	<h3 class="h3"><a href="http://finance.takungpao.com/special/cp4808/" target="_blank">[品牌专区]</a></h3>
+	<ul class="pic">
+		<a href="http://finance.takungpao.com/special/cp4808/" target="_blank" title="“燃”，就现在：苏宁易购818发烧节 ">
+			<img class="lazy" data-original="http://images.takungpao.com/2016/0902/20160902014850694.jpg" src="http://images.takungpao.com/2016/0902/20160902014850694.jpg" alt="“燃”，就现在：苏宁易购818发烧节 " />
+		</a>
+	</ul>
+	<ul class="txt"><li class="title"><p><a title="大公网" href="http://finance.takungpao.com/special/cp4808/" target="_blank" textvalue="引领2016：苏宁发力五大产业">引领2016：苏宁发力五大产业</a></p></li></ul></div>
+</div>			<div id="block_id_74491" class="admin_block" blockid="74491"><h2><a href="#" target="_blank" class="news_tle">友情链接</a></h2><dl><dd><a href="http://www.gov.hk/sc/residents/" target="_blank" textvalue="香港政府一站通">香港政府一站通</a> </dd><dd><a href="http://www.xinhuanet.com/" textvalue="新华网" target="_blank">新华网</a> &nbsp; <a href="http://www.wenweipo.com/" textvalue="香港文汇网" target="_blank">香港文汇网</a></dd><dd><a href="http://www.cdpf.org.cn/" textvalue="中国残疾人联合会" target="_blank">中国残疾人联合会 </a> </dd><dd><a href="http://www.baicmotor.com/" textvalue="北京汽车股份有限公司" target="_blank">北京汽车股份有限公司</a></dd><dd><a href="http://www.zgc.gov.cn/" textvalue="中关村" target="_blank">中关村</a> &nbsp; <a href="http://www.iresearch.cn/" textvalue="艾瑞网" target="_blank">艾瑞网</a> &nbsp;<a href="http://www.qingting.fm/ " textvalue="蜻蜓FM" target="_blank">蜻蜓FM</a></dd><dd><a href="http://www.chinafyba.com/f" textvalue="中国非物质文化遗产保护协会" target="_blank">中国非物质文化遗产保护协会</a></dd><dd><a href="http://www.ciftis.org/index.html" textvalue="中国（北京）国际服务贸易交易会" target="_blank">中国（北京）国际服务贸易交易会</a></dd><dd><a href="http://www.locpg.hk/" textvalue="中央人民政府驻香港特别行政区联络办公室" target="_blank">中央人民政府驻香港特别行政区联络办公室</a></dd></dl></div>        </div>
+    </div>
+    </section>
+    <!-- 返回顶部-->
+    <div id="tipback" class="btn_top" title="返回顶部" onclick="gotop();"><a class="icon_top_n" href="javascript:;"></a></div>
+    <!--顶部浮层广告Jone-->
+     <!--<div class="ad_box" id="ad_box">
+        <div class="ad_box_con">
+        <a href="http://www.takungpao.com.hk/" target="_blank"><img src="http://images.takungpao.com/2016/0617/20160617101359282.png" /></a>
+        <a href="javascript:;" id="ad_btn_close" class="ad_btn_close">X 关闭</a>
+        </div>
+    </div>-->
+    <!--顶部浮层广告Jone-->
+    <!-- 底部-->
+    <footer>
+    <div class="tpk_footer">
+      <div class="footer_line"></div>
+    <!-- s:footer_new1 -->
+                <div class="footerBox">
+      <div class="footerCon comWidth clearfix">
+        <ul>
+           <li><a href="http://news.takungpao.com/paper/" target="_blank">大公报</a></li>
+		   <li><a href="http://news.takungpao.com/" target="_blank">资讯</a></li>
+		   <li><a href="http://news.takungpao.com/mainland/" target="_blank">中国</a></li>
+		   <li><a href="http://news.takungpao.com/world/" target="_blank">国际</a></li>
+		   <li><a href="http://news.takungpao.com/hkol/" target="_blank">香港</a></li>
+		   <li><a href="http://news.takungpao.com/taiwan/" target="_blank">台湾</a></li>
+		   <li><a href="http://news.takungpao.com/opinion/" target="_blank">言论</a></li>
+		   <li><a href="http://finance.takungpao.com/" target="_blank">财经</a></li>
+		   <li><a href="http://finance.takungpao.com/financial/" target="_blank">金融</a></li>
+		   <li><a href="http://finance.takungpao.com/hkstock/" target="_blank">港股</a></li>
+		   <li><a href="http://sports.takungpao.com/" target="_blank">体育</a></li>
+		   <li><a href="http://ent.takungpao.com/" target="_blank">娱乐</a></li>
+		   <li><a href="http://fashion.takungpao.com/" target="_blank">时尚</a></li>
+		   <li><a href="http://auto.takungpao.com/" target="_blank">汽车</a></li>
+		   <li><a href="http://digi.takungpao.com/" target="_blank">数码</a></li>
+		   <li><a href="http://health.takungpao.com/" target="_blank">健康</a></li>
+		   <li><a href="http://edu.takungpao.com/" target="_blank">教育</a></li>
+		   <li><a href="http://bodhi.takungpao.com/" target="_blank">佛教</a></li>
+		   <li><a href="http://arts.takungpao.com/" target="_blank">艺术</a></li>
+		   <li><a href="http://talk.takungpao.com/dgds/" target="_blank">电视</a></li>
+		   <li><a href="http://news.takungpao.com/special/" target="_blank">专题</a></li>
+           <li class="a_review" id="a_review">
+                <a href="javascript:;">往期回顾</a>
+           </li> 
+        </ul>
+        <!-- 往期回顾-->
+        <div class="reviewPosAbBox">
+        <div class="reviewPosBox">
+            <input type="hidden" id="dateVale" name="dateVale" />
+                <input type="hidden" id="dateTime" name="dateTime" value="10" />
+                <div class="reviewBox" id="reviewBox">
+                    <a href="javascript:;" class="reviewDate fl_dib" id="reviewDate" onclick="WdatePicker({el:'dateVale',firstDayOfWeek:1,onpicked:function(dp){
+var url = location.href;
+var date_val=$('#dateVale').val();
+var date_time=$('#dateTime').val();
+window.open ('http://www.takungpao.com'+'/snapshots/'+date_val+'/'+date_time+'.html'); $('#a_review').removeClass('on');$('#reviewBox').hide();a_review_flag=true;
+} ,minDate:'2013-06-01', maxDate:'%y-%M-%d',dateFmt:'yyyyMMdd'});">日期</a>
+                    <div class="reviewTime fr_dib">
+                        <a href="javascript:;" class="fl_dib on" id="reviewTime_10">10时</a>
+                        <a href="javascript:;" class="time_flag fl_dib"  id="reviewTime_flag"></a>
+                        <a href="javascript:;" class="fl_dib" id="reviewTime_22">22时</a>
+                    </div>
+                </div>
+                <div class="rev_Bd"></div>
+        </div>
+        </div>
+        <!-- 往期回顾end-->
+      </div>
+      </div>              <!-- e:footer_new1 -->
+      <!-- s:footer_new2 -->
+                <!-- e:footer_new2 -->
+<div class="copyright comWidth clearfix">
+	<div class="cop_dg">
+		<a href="http://www.takungpao.com/corp/about.html" target="_blank">关于我们</a><span>|</span>
+		<a href="http://www.takungpao.com/corp/declare.html" target="_blank">网站声明</a><span>|</span>
+		<a href="http://www.takungpao.com/corp/legal_information.html" target="_blank">举报投诉须知</a><span>|</span>
+		<a href="http://www.takungpao.com/corp/join_us.html" target="_blank">诚聘英才</a><span>|</span>
+		<a href="http://www.takungpao.com/corp/links.html" target="_blank">友情链接</a><span>|</span>
+		<a href="http://www.takungpao.com/corp/contact_us.html" target="_blank">联系我们</a><span>|</span>
+		<a target="_blank" href="http://www.takungpao.com/corp/advertisement.html">广告服务</a><span>|</span>
+		<a href="http://www.takungpao.com/copyright/sitemap.htm" target="_blank">网站地图</a><span>|</span>
+		<a href="http://www.miibeian.gov.cn" target="_blank">京ICP备13049349号</a><span>|</span>
+		<a href="http://www.bjgaj.gov.cn/web/" target="_blank">京公网安备11010102000014号</a>
+	</div>
+	<div class="p-cut">Copyright  2012 - 2016 Takungpao All Rights Reserved</div>
+</div>
+<div style="display:none">
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?556301cb9e28db67d66c099f7a7323cd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</div>               <!-- e:footer_new2 -->
+    </div>
+    </footer>
+<script type="text/javascript" src="http://static.takungpao.com/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="http://static.takungpao.com/js/headFoot_2.0.js"></script>
+    <script src="http://static.takungpao.com/lib/tkp.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.takungpao.com/lib/idangerous/idangerous.swiper.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //要闻,香港切换
+            $("#news_hkol a").each(function(index){
+                $(this).mouseover(function(){
+                     $("#news_hkol a").removeClass("on");
+                     $(this).addClass("on");
+                     $(".news_tle_list.show").removeClass("show");
+                     $(".news_tle_list").eq(index).addClass("show");
+                });
+            });
+            var fromhk = window.location.href.indexOf(".com.hk");
+            if( fromhk != -1 ){
+                 $("#news_hkol a").removeClass("on");
+                 $("#news_hkol a").eq(1).addClass("on");
+                 $(".news_tle_list.show").removeClass("show");
+                 $(".news_tle_list").eq(1).addClass("show");
+            }
+        
+            //关于广告弹出层 add by wwj 2014-9-1 9:42:44
+            function openNewAd(){
+                $("#ad_box").fadeIn();
+            }
+            $("#ad_btn_close").bind("click",function(){
+                closeNewAd();
+            });
+            function closeNewAd(){
+                $("#ad_box").fadeOut();
+                $("#ad_img_pos").fadeIn();
+            }
+            setTimeout(function(){openNewAd();},0);
+            setTimeout(function(){closeNewAd();},0);
+
+            //用户信息
+            var u=tkp.ui();
+            if(u.status){
+                $('#loginfo').html('<a href="http://comments.takungpao.com/?m=member&c=index&a=reply" target="_blank" class="a_logined" style="color:#c90">'+u.username+'</a><a id="logout_k" style="cursor:pointer">退出</a>');
+                $("#logout_k").click(function(){
+                    window.location.href="http://passport.takungpao.com/logout_external";
+                })
+            }
+
+            tkp.stat(1,5);
+            
+            $('a').click(function(){
+                var t=$(this);
+                var p='PC_首页';
+                var u=t.attr('href');
+                if(u=="#")return ;
+                var tit=t.text().replace(/\s*/, '');
+                tit || t.find('img').each(function(){tit=$(this).attr('alt');});
+                tit && tkp.pclick(p,tit,u);
+            });
+
+            var mySwiper = new Swiper('#focus_photos', {
+                pagination: '#page_photos',
+                paginationClickable: true,
+                loop: true,
+                autoplay:5000,
+                speed:500,
+                autoResize: false,
+                slidesPerView: 'auto'
+            });
+            $('.arrow_left').on('click', function(e){
+                e.preventDefault();
+                mySwiper.swipePrev();
+            });
+            $('.arrow_right').on('click', function(e){
+                e.preventDefault();
+                mySwiper.swipeNext();
+            });
+        });
+    </script>
+<script type="text/javascript" src="http://static.takungpao.com/js/jquery.gotop.js"></script>
+<div id="block_id_81735" class="admin_block" blockid="81735"><style type="text/css">
+.video_spring_festival{ width:400px; height:225px; position:fixed; right:1px; bottom:-260px; z-index:999999999999; _position:absolute; _bottom:expression(documentElement.scrollTop + 1);}
+.video_spring_festival .link{ width:100%; height:100%; display:block; position:absolute; left:0; top:0; z-index:10001;}
+.video_spring_festival .close_wishing{ height:20px; line-height:20px; color:#666; position:absolute; right:0; top:-25px; cursor:pointer;}
+.mejs-container .mejs-controls{ display:none;}
+</style>
+
+<!--春节视频-->
+<div class="video_spring_festival">
+<span class="close_wishing">关闭×</span>
+	<a href="#" target="_blank" class="link"></a>
+    <video poster="http://static.takungpao.com/js/video_new/video_bg.gif" id="videoSpringFestival" controls="controls" preload="none" webkit-playsinline height="100%" style="width:100%; height:100%;">
+        <source type="video/mp4" src="#" />
+    </video>
+</div>
+<!--/春节视频-->
+
+<script type="text/javascript">
+$(function(){
+	$('video').mediaelementplayer({
+		success: function(media, node, player) {
+			var me = document.getElementById(media.id), wish = $('.video_spring_festival');
+			console.log(media.src);
+			if(media.src.indexOf('mp4') < 0){
+				return false;
+			}else{
+				wish.animate({'bottom':'1px'},1000,function(){
+					setTimeout(function(){
+						me.play();
+					},400);
+				});	
+			}
+			me.addEventListener('ended', function() {
+				setTimeout(function(){
+					wish.animate({'bottom':'-260px'},1000);
+					console.log('大公网技术保障中心恭祝您新春愉快，阖家欢乐！')
+				},1000);
+			},false);
+		}
+	});
+	$('.close_wishing').on('click',function(){
+		$('.video_spring_festival').animate({'bottom':'-260px'},1000,function(){
+			document.getElementById('videoSpringFestival').pause();
+		});
+	});
+});
+</script></div></body>
+</html>
